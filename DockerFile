@@ -1,3 +1,5 @@
+# Kriteria: 2
+
 # Menggunakan base image node.js versi 14
 FROM node:14
 
