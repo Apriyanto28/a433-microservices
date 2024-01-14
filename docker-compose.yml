@@ -12,6 +12,9 @@ services:
     # Menggunakan image yang sudah ada di dalam docker hub ke dalam file
     image: craziyuhuu/item-app:v1
 
+    # Menambahkan restart policy untuk service item-app
+    restart: always
+
     # Menggunakan port 80 untuk host dari port 8080 yang ada pada container
     ports:
       - "80:8080"
@@ -25,6 +28,9 @@ services:
     
     # Menggunakan image yang sudah tersedia dari mongo db dan menggunakan versi yang 3
     image: mongo:3
+
+    # Menambahkan restart policy untuk service item-db
+    restart: always
 
     # Menggunakan volumen bernama app-db (akan dijalankan dibawah) yang dibuat terhadap /data/db
     volumes:
