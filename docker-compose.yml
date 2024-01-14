@@ -1,14 +1,35 @@
+# Kriteria: 4
+
+# Menggunakan docker compose versi kedua
 version: '2'
+
+# Menambahkan 2 buah service, yaitu item-app dan item-db yang dimulai dengan service
 services:
+  
+  # Menambahkan service untuk item-app
   item-app:
+    
+    # Menggunakan image yang sudah ada di dalam docker hub ke dalam file
     image: craziyuhuu/item-app:v1
+
+    # Menggunakan port 80 untuk host dari port 8080 yang ada pada container
     ports:
       - "80:8080"
+    
+    # Sebelum menjalan item-app, terlebih dahulu menjalan item-db terlebih dahulu
     depends_on:
       - item-db
+  
+  # Menambahkan service untuk item-db
   item-db:
+    
+    # Menggunakan image yang sudah tersedia dari mongo db dan menggunakan versi yang 3
     image: mongo:3
+
+    # Menggunakan volumen bernama app-db (akan dijalankan dibawah) yang dibuat terhadap /data/db
     volumes:
       - app-db:data/db
+
+# Membuat volume untuk app-db
 volumes:
   app-db:
