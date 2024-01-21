@@ -1,0 +1,1 @@
+public view docker hub: https://hub.docker.com/r/craziyuhuu/karsajobs-ui
